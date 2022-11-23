@@ -8,6 +8,8 @@ import {
   Icon56MessageOutline as MessageIcon,
   Icon56NotificationOutline as NotificationIcon,
   Icon28Menu as Menu,
+  Icon24Moon as Moon,
+  Icon24SunOutline as Sun,
 } from '@vkontakte/icons'
 import styles from './Header.module.scss'
 import Link from 'next/link'
@@ -41,6 +43,13 @@ export const Header: FC<HeaderProps> = () => {
         <IconButton>
           <NotificationIcon width={30} height={30} />
         </IconButton>
+
+        <div className={styles.nightMode}>
+          <IconButton>
+            {/* <Moon width={30} height={30} /> */}
+            <Sun width={30} height={30} />
+          </IconButton>
+        </div>
 
         <Avatar
           className={styles.avatar}
