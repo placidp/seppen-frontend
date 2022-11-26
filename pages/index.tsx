@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { Header } from '../components/Header'
 import { Post } from '../components/Post'
 import { LeftMenu } from '../components/LeftMenu'
+import { MainLayout } from '../layouts/MainLayout'
 
 function Loader() {
   return `https://via.placeholder.com/600x400}`
@@ -22,27 +23,16 @@ export default function Home() {
           rel='stylesheet'></link>
       </Head>
       <Header />
-      <div className='wrapper'>
-        <div className='leftSide'>
+      <MainLayout />
+
+      {/* <div className='leftSide'>
           <LeftMenu />
         </div>
         <div className='content'>
           <Post />
           <Post />
-          {/* <Paper elevation={0}>
-            <Typography variant='h5'>«Самокат» впервые с весны вернулся к экспансии в городах России</Typography>
-            <Typography>После начала «военной операции» сервис приостановил работу в 15 городах.</Typography>
-            <Image
-              loader={Loader}
-              src='https://leonardo.osnova.io/a21ca5a9-d95b-560d-9a6f-9fa87eff7fcd/-/preview/600/-/format/webp//'
-              width={600}
-              height={400}
-              alt='mypic'
-            />
-          </Paper> */}
         </div>
-        <div className='rightSide'></div>
-      </div>
+        <div className='rightSide'></div> */}
     </div>
   )
 }
