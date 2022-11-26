@@ -8,6 +8,7 @@ import {
   Icon56MessageOutline as MessageIcon,
   Icon56NotificationOutline as NotificationIcon,
   Icon28Menu as Menu,
+  Icon16ArrowTriangleDown as ArrowDown,
   Icon24Moon as Moon,
   Icon24SunOutline as Sun,
 } from '@vkontakte/icons'
@@ -56,6 +57,7 @@ export const Header: FC<HeaderProps> = () => {
           alt='Remy Sharp'
           src='https://lh3.googleusercontent.com/a/ALm5wu3GF2TPl5piy7ckyzDKJ8k6WT9JZ-vaOE90uAK2MA=s83-c-mo'
         />
+        <ArrowDown />
       </div>
     </Paper>
   )

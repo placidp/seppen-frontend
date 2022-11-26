@@ -28,6 +28,7 @@ export default function Home() {
         </div>
         <div className='content'>
           <Post />
+          <Post />
           {/* <Paper elevation={0}>
             <Typography variant='h5'>«Самокат» впервые с весны вернулся к экспансии в городах России</Typography>
             <Typography>После начала «военной операции» сервис приостановил работу в 15 городах.</Typography>
