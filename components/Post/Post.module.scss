@@ -1,11 +1,29 @@
 .title {
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   font-size: 22px !important;
 }
 
 .paper {
   border-radius: 8px !important;
   margin-bottom: 30px;
+  background-color: #fafafa;
+  padding: 20px 0 0 0;
+
+  p {
+    line-height: 26px;
+  }
+
+  h3,
+  h4,
+  h5,
+  p {
+    padding: 0 16px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .description {
