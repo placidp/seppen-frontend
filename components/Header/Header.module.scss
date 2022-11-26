@@ -6,14 +6,30 @@
   min-height: 60px;
 
   display: grid;
-  grid-template-columns: 0.8fr minmax(200px, 4fr) 1.2fr;
+  grid-template-columns: 220px minmax(0, 640px) 320px;
   place-items: center;
+  justify-content: space-between;
 
-  padding: 0 25px 0 13px;
+  // padding: 0 25px 0 13px;
+  padding: 0 20px;
   margin-block-end: 15px;
   z-index: 1;
 
   border-bottom: 1px solid rgba(242, 242, 242, 1);
+}
+
+.headerLeft,
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.headerLeft {
+  justify-self: start;
+}
+
+.headerRight {
+  justify-self: end;
 }
 
 .logo {
@@ -73,10 +89,4 @@
 
 .nightMode {
   margin-inline-start: 15px;
-}
-
-.headerLeft,
-.headerRight {
-  display: flex;
-  align-items: center;
 }
