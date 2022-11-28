@@ -1,69 +1,40 @@
 import { createTheme } from '@mui/material'
-/*
+
 export const theme = createTheme({
-  props: {
-    MuiButtonBase: {
-      disableRipple: true,
-    },
-  },
   palette: {
     primary: {
-      main: '#4683d9',
+      main: '#757575',
     },
   },
-  overrides: {
+  components: {
     MuiPaper: {
-      rounded: {
-        borderRadius: 8,
+      styleOverrides: {
+        root: {
+          marginBottom: '30px',
+          backgroundColor: '#fafafa',
+          padding: '20px 0 0 0',
+        },
+        rounded: {
+          borderRadius: 8,
+        },
       },
     },
     MuiDialog: {
-      paper: {
-        boxShadow: 'none',
+      styleOverrides: {
+        paper: { boxShadow: 'none' },
       },
     },
-    MuiButton: {
-      root: {
-        borderRadius: '8px',
-        textTransform: 'inherit',
-        fontSize: 16,
-        transition: 'none',
-        '&:active': {
-          boxShadow:
-            '0 1px 1px rgb(0 0 0 / 15%), 0 4px 7px rgb(0 0 0 / 0%), 0 -1px 0 rgb(0 0 0 / 5%), -1px 0 0 rgb(0 0 0 / 5%), 1px 0 0 rgb(0 0 0 / 5%) !important',
-          transform: 'translateY(1px)',
-        },
-      },
-      contained: {
-        backgroundColor: 'white',
-        boxShadow:
-          '0 1px 1px rgb(0 0 0 / 15%), 0 4px 7px rgb(0 0 0 / 5%), 0 -1px 0 rgb(0 0 0 / 5%), -1px 0 0 rgb(0 0 0 / 5%), 1px 0 0 rgb(0 0 0 / 5%)',
-        '&:hover': {
-          backgroundColor: 'white',
-          boxShadow:
-            '0 1px 1px rgb(0 0 0 / 18%), 0 4px 7px rgb(0 0 0 / 8%), 0 -1px 0 rgb(0 0 0 / 8%), -1px 0 0 rgb(0 0 0 / 8%), 1px 0 0 rgb(0 0 0 / 15%)',
-        },
-      },
-      containedPrimary: {
-        backgroundColor: '#4683d9',
-        '&:hover': {
-          backgroundColor: '#437CCE',
-        },
-      },
-    },
-  },
-})
-*/
-
-export const theme = createTheme({
-  components: {
-    // Name of the component
     MuiButton: {
       styleOverrides: {
-        // Name of the slot
         root: {
-          // Some CSS
-          fontSize: '1rem',
+          borderRadius: '8px !important',
+          textTransform: 'inherit',
+          fontSize: 16,
+          transition: 'none',
+
+          ':hover': {
+            boxShadow: 'inset 0em 4em rgba(0, 0, 0, 0.03) !important',
+          },
         },
       },
     },

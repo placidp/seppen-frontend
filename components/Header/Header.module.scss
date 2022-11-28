@@ -6,7 +6,7 @@
   min-height: 60px;
 
   display: grid;
-  grid-template-columns: 220px minmax(0, 640px) 320px;
+  grid-template-columns: 220px minmax(0, 640px) 300px;
   place-items: center;
   justify-content: space-between;
 
@@ -45,7 +45,6 @@
 .searchBlock {
   position: relative;
   display: flex;
-  // margin-inline-start: 15px;
   margin: 0px 10px;
   width: 100%;
 

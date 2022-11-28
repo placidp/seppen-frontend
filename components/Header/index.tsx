@@ -51,12 +51,13 @@ export const Header: FC<HeaderProps> = () => {
             <Sun width={30} height={30} />
           </IconButton>
         </div>
-
-        <Avatar
-          className={styles.avatar}
-          alt='Remy Sharp'
-          src='https://lh3.googleusercontent.com/a/ALm5wu3GF2TPl5piy7ckyzDKJ8k6WT9JZ-vaOE90uAK2MA=s83-c-mo'
-        />
+        <a href='/profile/1'>
+          <Avatar
+            className={styles.avatar}
+            alt='Remy Sharp'
+            src='https://lh3.googleusercontent.com/a/ALm5wu3GF2TPl5piy7ckyzDKJ8k6WT9JZ-vaOE90uAK2MA=s83-c-mo'
+          />
+        </a>
         <ArrowDown />
       </div>
     </Paper>

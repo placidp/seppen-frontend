@@ -2,49 +2,34 @@ import React from 'react'
 import clsx from 'clsx'
 import { LeftMenu } from '../components/LeftMenu'
 import { SideComments } from '../components/SideComments'
-import { Post } from '../components/Post'
 
 interface MainLayoutProps {
-  //   hideComments?: boolean;
-  //   hideMenu?: boolean;
-  // contentFullWidth?: boolean;
-  // className?: string;
+  hideComments?: boolean
+  // hideMenu?: boolean
+  contentFullWidth?: boolean
+  children: React.ReactNode
+  className?: string
 }
 
-export const MainLayout: React.FC<MainLayoutProps> = (
-  {
-    // children,
-    // contentFullWidth,
-    // hideComments,
-    // hideMenu,
-    // className,
-  },
-) => {
+export const MainLayout: React.FC<MainLayoutProps> = ({
+  children,
+  contentFullWidth,
+  hideComments,
+  // hideMenu,
+  className,
+}) => {
   return (
-    <div
-      className='wrapper'
-      // className={clsx('wrapper', className)}
-    >
-      {
-        // !hideMenu &&
-        <div className='leftSide'>
-          <LeftMenu />
-        </div>
-      }
-      <div
-        className='content'
-        // className={clsx('content', { 'content--full': contentFullWidth })}
-      >
-        <Post />
-        <Post />
-        {/* {children} */}
+    <div className={clsx('wrapper', className)}>
+      <div className='leftSide'>
+        <LeftMenu />
       </div>
-      {
-        // !hideComments &&
+
+      <div className={clsx('content', { 'content--full': contentFullWidth })}>{children}</div>
+      {!hideComments && (
         <div className='rightSide'>
           <SideComments />
         </div>
-      }
+      )}
     </div>
   )
 }

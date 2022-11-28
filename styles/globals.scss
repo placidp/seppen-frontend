@@ -23,19 +23,24 @@ a {
   margin: 0 auto;
 
   &--full {
-    max-width: 1000px;
+    // max-width: 1000px;
+    // display: grid;
+    // grid-template-columns: 220px minmax(0, 1000px);
   }
 }
 
 .wrapper {
-  // display: flex;
   display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  // grid-template-columns: 1fr minmax(640px, 2fr) 1fr;
-  grid-template-columns: 220px minmax(0, 640px) 320px;
+  padding-top: 80px !important;
+  padding: 0 10px;
+
+  grid-template-columns: 220px minmax(0, 640px) 300px;
   justify-content: space-between;
-  padding: 0 20px;
-  padding-top: 80px;
+  gap: 20px;
+
+  // &--full {
+  //   grid-template-columns: 220px minmax(0, 1000px);
+  // }
 }
 
 .main-layout-white {
