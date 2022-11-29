@@ -1,0 +1,24 @@
+.container {
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 5;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 4px;
+
+    &:first-child {
+      margin-left: 20px;
+    }
+    &:last-child {
+      margin-right: 20px;
+    }
+  }
+}

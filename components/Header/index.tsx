@@ -1,6 +1,7 @@
 import { FC } from 'react'
-import { Paper, IconButton, Avatar } from '@mui/material'
+import Link from 'next/link'
 
+import { Paper, IconButton, Avatar } from '@mui/material'
 import {
   Icon28SnowflakeOutline as Logo,
   Icon56SearchOutline as SearchIcon,
@@ -13,7 +14,6 @@ import {
   Icon24SunOutline as Sun,
 } from '@vkontakte/icons'
 import styles from './Header.module.scss'
-import Link from 'next/link'
 
 interface HeaderProps {}
 
@@ -51,13 +51,13 @@ export const Header: FC<HeaderProps> = () => {
             <Sun width={30} height={30} />
           </IconButton>
         </div>
-        <a href='/profile/1'>
+        <Link href='/profile/1'>
           <Avatar
             className={styles.avatar}
             alt='Remy Sharp'
             src='https://lh3.googleusercontent.com/a/ALm5wu3GF2TPl5piy7ckyzDKJ8k6WT9JZ-vaOE90uAK2MA=s83-c-mo'
           />
-        </a>
+        </Link>
         <ArrowDown />
       </div>
     </Paper>

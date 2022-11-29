@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 import styles from './Post.module.scss'
 import { Paper, Typography } from '@mui/material'
+import { PostActions } from '../PostActions'
 
 interface PostProps {
   // title: string
@@ -35,9 +36,7 @@ export const Post: React.FC<PostProps> = () =>
           width={600}
           // alt={title}
         />
-        {/* ) */}
-        {/* } */}
-        {/* <PostActions /> */}
+        <PostActions />
       </Paper>
     )
   }
