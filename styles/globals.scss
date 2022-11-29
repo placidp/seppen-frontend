@@ -33,12 +33,11 @@ a {
 
   grid-template-columns: 220px minmax(0, 640px) 300px;
   justify-content: space-between;
-  gap: 20px;
+  gap: 10px;
 
   &--full {
     grid-template-columns: 220px minmax(0, 1100px) 300px;
     justify-content: space-between;
-    gap: 10px;
   }
 }
 
