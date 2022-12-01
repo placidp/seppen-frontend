@@ -17,7 +17,7 @@ export const Post: React.FC<PostProps> = () =>
   // { id, title, description, imageUrl }
   {
     return (
-      <Paper elevation={0} className='p-20' classes={{ root: styles.paper }}>
+      <Paper elevation={0} classes={{ root: styles.paper }}>
         <Typography variant='h4' className={styles.title}>
           <Link href={`/news/1}`}>
             {/* <a>{title}</a> */}Жизненные истории: как из-за чёрной пятницы в интернет-магазине всё может пойти не так
