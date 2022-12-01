@@ -36,6 +36,7 @@ export const Post: React.FC<PostProps> = () =>
           width={600}
           // alt={title}
         />
+
         <PostActions />
       </Paper>
     )

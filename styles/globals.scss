@@ -39,6 +39,12 @@ a {
     grid-template-columns: 220px minmax(0, 1100px) 300px;
     justify-content: space-between;
   }
+
+  @media (max-width: 1260px) {
+    grid-template-columns: 220px minmax(0, 640px);
+    gap: 30px;
+    justify-content: start;
+  }
 }
 
 .main-layout-white {
