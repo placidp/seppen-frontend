@@ -8,7 +8,7 @@ interface FullPostPageProps {}
 
 const FullPostPage: NextPage<FullPostPageProps> = () => {
   return (
-    <MainLayout contentFullWidth hideComments>
+    <MainLayout contentFullWidth>
       <FullPost />
       <PostComments />
     </MainLayout>

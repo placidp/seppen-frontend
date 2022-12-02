@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 
 import styles from './Post.module.scss'
 import { Paper, Typography } from '@mui/material'

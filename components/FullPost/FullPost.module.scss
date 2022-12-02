@@ -1,6 +1,9 @@
 .paper {
-  margin-top: -20px;
   border-radius: 0 !important;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
 
   p {
     line-height: 26px;
@@ -8,9 +11,7 @@
     font-size: 18px;
   }
 
-  h3,
-  h4,
-  h5,
+  .title,
   p {
     padding: 0 16px;
   }
@@ -41,9 +42,9 @@
 
 .title,
 .text p {
-  width: 720px;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
+  max-width: 640px;
+  margin-inline: auto;
+  margin-inline: auto;
 }
 
 .bottom {
