@@ -5,10 +5,6 @@ import Link from 'next/link'
 import { Avatar } from '@mui/material'
 
 interface CommentItemProps {
-  // user: ResponseUser;
-  // text: string;
-  // post: PostItem;
-
   id: number
   user: {
     id: number
@@ -16,8 +12,6 @@ interface CommentItemProps {
     avatarUrl: string
   }
   text: string
-  // post: PostItem
-  // user: ResponseUser
   createdAt: string
   updatedAt: string
   post: {

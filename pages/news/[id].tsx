@@ -8,13 +8,9 @@ interface FullPostPageProps {}
 
 const FullPostPage: NextPage<FullPostPageProps> = () => {
   return (
-    <MainLayout className='mb-50' contentFullWidth>
-      <FullPost
-      // title={post.title} blocks={post.body}
-      />
-      <PostComments
-      // postId={post.id}
-      />
+    <MainLayout contentFullWidth hideComments>
+      <FullPost />
+      <PostComments />
     </MainLayout>
   )
 }

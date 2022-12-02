@@ -11,15 +11,16 @@ interface FullPostProps {}
 export const FullPost: React.FC<FullPostProps> = () => {
   return (
     <Paper elevation={0} className={styles.paper}>
-      <div className='container'>
+      <div className='container' style={{ marginTop: '10px' }}>
         <Typography variant='h4' className={styles.title}>
-          {/* {title} */} Статья на vc.ru сделала мой стартап известным на всю страну и… навредила ему!
+          Статья на vc.ru сделала мой стартап известным на всю страну и… навредила ему!
         </Typography>
         <div className={styles.text}>
           <p>
             Рассказываю, какие серьезные ошибки я совершил после публикации, почему разочаровался в корпорациях и что
             помогло мне развивать продукт дальше.
           </p>
+
           <img
             src='https://leonardo.osnova.io/f8e93175-06b2-527c-adb4-24dd468acf67/-/preview/1700/-/format/webp/'
             height={500}

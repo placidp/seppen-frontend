@@ -47,7 +47,6 @@ export const Header: FC<HeaderProps> = () => {
 
         <div className={styles.nightMode}>
           <IconButton>
-            {/* <Moon width={30} height={30} /> */}
             <Sun width={30} height={30} />
           </IconButton>
         </div>

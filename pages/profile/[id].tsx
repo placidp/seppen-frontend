@@ -9,7 +9,7 @@ import styles from './Profile.module.scss'
 
 export default function Profile() {
   return (
-    <MainLayout contentFullWidth>
+    <MainLayout contentFullWidth hideComments>
       <Paper className={styles.wrapper} elevation={0}>
         <div className={styles.header}>
           <div>
@@ -51,6 +51,8 @@ export default function Profile() {
       </Paper>
       <div className={styles.content}>
         <div>
+          <Post />
+          <Post />
           <Post />
         </div>
         <Paper className={styles.followers} elevation={0}>

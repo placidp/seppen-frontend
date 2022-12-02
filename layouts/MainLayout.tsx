@@ -11,20 +11,13 @@ interface MainLayoutProps {
   className?: string
 }
 
-export const MainLayout: React.FC<MainLayoutProps> = ({
-  children,
-  contentFullWidth,
-  hideComments,
-  // hideMenu,
-  className,
-}) => {
+export const MainLayout: React.FC<MainLayoutProps> = ({ children, contentFullWidth, hideComments, className }) => {
   return (
     <div className={clsx('wrapper', className, { 'wrapper--full': contentFullWidth })}>
       <div className='leftSide'>
         <LeftMenu />
       </div>
 
-      {/* <div className={clsx('content', { 'content--full': contentFullWidth })}>{children}</div> */}
       <div className={'content'}>{children}</div>
       {!hideComments && (
         <div className='rightSide'>

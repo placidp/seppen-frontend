@@ -1,15 +1,4 @@
-import {
-  IconButton,
-  Paper,
-  Tab,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  Tabs,
-  Typography,
-} from '@mui/material'
+import { Paper, Tab, Table, TableBody, TableCell, TableHead, TableRow, Tabs, Typography } from '@mui/material'
 import { NextPage } from 'next'
 import { FollowButton } from '../../components/FollowButton'
 import { MainLayout } from '../../layouts/MainLayout'

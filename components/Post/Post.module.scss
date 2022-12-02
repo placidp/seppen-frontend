@@ -21,6 +21,13 @@
   }
 }
 
+.title,
+.description {
+  width: 640px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+
 .description {
   margin-top: 10px;
   margin-bottom: 15px;

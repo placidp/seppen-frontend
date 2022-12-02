@@ -21,12 +21,16 @@
 }
 
 .rotated {
-  width: 180px;
-  transform: rotate(-90deg) translateX(-50px);
+  transform: rotate(-90deg) translateX(20px) translateY(5px);
   transform-origin: right;
+  margin-right: 20px;
 
   svg {
     transform: rotate(270deg);
+  }
+
+  .commentItem {
+    display: none;
   }
 }
 

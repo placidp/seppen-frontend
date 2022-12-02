@@ -7,7 +7,6 @@ import { CommentItem } from './CommentItem'
 import clsx from 'clsx'
 
 export const SideComments = () => {
-  // const { comments } = useComments()
   const [visible, setVisible] = React.useState(true)
 
   const toggleVisible = () => {
@@ -21,7 +20,6 @@ export const SideComments = () => {
       <h3 onClick={toggleVisible}>
         Комментарии <ArrowRightIcon />
       </h3>
-      {/* {visible && comments.map((obj) => <CommentItem key={obj.id} {...obj} />)} */}
       {data.comments.popular.map((comment) => (
         <CommentItem key={comment.id} {...comment} />
       ))}
