@@ -31,7 +31,7 @@ a {
 
   grid-template-columns: 220px minmax(0, 640px) 300px;
   justify-content: space-between;
-  gap: 30px;
+  gap: 20px;
 
   &--full {
     grid-template-columns: 220px minmax(0, 1100px) 300px;
@@ -39,11 +39,11 @@ a {
   }
 
   &:not(:has(.rightSide)) {
-    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-columns: 220px minmax(0, 1fr) 175px;
   }
 
   @media (max-width: 1360px) {
-    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-columns: 170px minmax(0, 1fr);
 
     .rightSide {
       display: none;

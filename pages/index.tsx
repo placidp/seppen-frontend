@@ -3,7 +3,7 @@ import { MainLayout } from '../layouts/MainLayout'
 
 export default function Home() {
   return (
-    <MainLayout contentFullWidth hideComments>
+    <MainLayout contentFullWidth>
       <Post />
       <Post />
     </MainLayout>
