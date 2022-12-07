@@ -27,12 +27,9 @@ export const Comment: React.FC<CommentPostProps> = () => {
   return (
     <div className={styles.comment}>
       <div className={styles.userInfo}>
-        <Avatar style={{ marginRight: 10 }}>{}</Avatar>
-        <b>
-          {}
-          Master Oogway
-        </b>
-        <span>{}5 часов</span>
+        <Avatar style={{ marginRight: 10 }}></Avatar>
+        <b>Master Oogway</b>
+        <span>5 часов</span>
       </div>
       <Typography className={styles.text}>
         <p>
@@ -46,6 +43,7 @@ export const Comment: React.FC<CommentPostProps> = () => {
           <MoreIcon />
         </IconButton>
         <Menu
+          className={styles.menu}
           anchorEl={anchorEl}
           elevation={2}
           open={Boolean(anchorEl)}
@@ -56,7 +54,6 @@ export const Comment: React.FC<CommentPostProps> = () => {
           <MenuItem>Редактировать</MenuItem>
         </Menu>
       </>
-      {/* )} */}
     </div>
   )
 }

@@ -35,9 +35,11 @@ export const Header: FC<HeaderProps> = () => {
       </div>
 
       <div className={styles.headerRight}>
-        <IconButton>
-          <PenIcon width={30} height={30} fill={'rgba(0, 0, 0, 0.54)'} />
-        </IconButton>
+        <Link href='/write'>
+          <IconButton>
+            <PenIcon width={30} height={30} fill={'rgba(0, 0, 0, 0.54)'} />
+          </IconButton>
+        </Link>
         <IconButton>
           <MessageIcon width={30} height={30} />
         </IconButton>

@@ -11,7 +11,7 @@ export const PostComments: React.FC<PostComments> = () => {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <Paper elevation={0} className={styles.wrapper}>
+    <Paper elevation={0} className={styles.paper}>
       <div className='container'>
         <Typography variant='h6' className={styles.title}>
           42 комментария

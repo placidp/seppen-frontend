@@ -43,3 +43,10 @@
     color: #757575;
   }
 }
+
+.menu {
+  [class^='MuiPaper'] {
+    padding: 0;
+    width: auto;
+  }
+}
