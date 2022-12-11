@@ -4,16 +4,17 @@ import { Typography, IconButton, MenuItem, Menu, Avatar } from '@mui/material'
 import { Icon16MoreHorizontal as MoreIcon } from '@vkontakte/icons'
 
 import styles from './Comment.module.scss'
-import { StringLiteral } from 'typescript'
 
 interface CommentPostProps {
   user: {
-    fullName: string
+    fullname: string
+    avatarUrl: string
   }
-  text: StringLiteral
+  text: string
+  createdAt: string
 }
 
-export const Comment: React.FC<CommentPostProps> = () => {
+export const Comment: React.FC<CommentPostProps> = ({ user: { fullname, avatarUrl }, text, createdAt }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -27,15 +28,12 @@ export const Comment: React.FC<CommentPostProps> = () => {
   return (
     <div className={styles.comment}>
       <div className={styles.userInfo}>
-        <Avatar style={{ marginRight: 10 }}></Avatar>
-        <b>Master Oogway</b>
-        <span>5 часов</span>
+        <Avatar style={{ marginRight: 10 }} src={avatarUrl}></Avatar>
+        <b>{fullname}</b>
+        <span>{createdAt}</span>
       </div>
       <Typography className={styles.text}>
-        <p>
-          Некоторое время пользовалась бесплатным виртуальным помощником от тинькофа → он тоже отвечает на звонки, а
-          потом отправляет тебе расшифровку. Корявенько, но удобно
-        </p>
+        <p>{text}</p>
       </Typography>
       <>
         <span className={styles.replyButton}>Ответить</span>

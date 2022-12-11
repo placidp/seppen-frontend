@@ -3,6 +3,7 @@ import { FullPost } from '../../components/FullPost'
 import React from 'react'
 import { PostComments } from '../../components/PostComments'
 import { NextPage } from 'next'
+import data from '../../data'
 
 interface FullPostPageProps {}
 

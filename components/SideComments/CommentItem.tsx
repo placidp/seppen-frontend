@@ -13,7 +13,7 @@ interface CommentItemProps {
   }
   text: string
   createdAt: string
-  updatedAt: string
+  // updatedAt: string
   post: {
     id: number
     title: string
