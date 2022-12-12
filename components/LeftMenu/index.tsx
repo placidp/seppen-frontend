@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { Button } from '@mui/material'
 import {
@@ -9,7 +10,6 @@ import {
 } from '@vkontakte/icons'
 
 import styles from './LeftMenu.module.scss'
-import { useRouter } from 'next/router'
 
 const menu = [
   { text: 'Лента', icon: <FireIcon width={22} height={22} />, path: '/' },
@@ -28,7 +28,7 @@ export const LeftMenu: React.FC = () => {
           <li key={obj.path}>
             <Link legacyBehavior href={obj.path}>
               <a>
-                <Button variant={router.asPath === obj.path ? 'contained' : 'text'}>
+                <Button variant={'contained'} classes={router.asPath === obj.path ? { root: styles.active } : ''}>
                   {obj.icon}
                   {obj.text}
                 </Button>
