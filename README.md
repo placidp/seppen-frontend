@@ -36,6 +36,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ### Todo
 - [ ] main layout structure css grid
 - [ ] use css variables instead of magic values
-- [ ] switch to styled components from css modules
 - [ ] add dark theme / light theme
+- [ ] fix MUI color palette
+- [ ] switch to styled components from css modules
 - [ ] switch from editor.js to something else
+- [ ] switch from vk icons 
+- [ ] add match passwords yup validation 
