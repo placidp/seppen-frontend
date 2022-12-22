@@ -13,7 +13,7 @@ export const theme = createTheme({
           marginBottom: '50px',
           marginTop: '-10px',
           backgroundColor: '#fafafa',
-          padding: '30px 0 0 0',
+          // padding: '30px 0 0 0',
           width: 'clamp(520px, 100%, 760px)',
         },
         rounded: {
@@ -24,6 +24,13 @@ export const theme = createTheme({
     MuiDialog: {
       styleOverrides: {
         paper: { boxShadow: 'none' },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          marginBottom: '10px',
+        },
       },
     },
     MuiButton: {

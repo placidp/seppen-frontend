@@ -93,6 +93,16 @@
   }
 }
 
+.loginButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+
+  &:hover {
+  }
+}
+
 .nightMode {
   margin-inline-start: 15px;
 }

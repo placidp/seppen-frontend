@@ -20,26 +20,25 @@ interface CommentItemProps {
   }
 }
 
-export const CommentItem: React.FC<CommentItemProps> = ({ user, text, post }) => {
+export const CommentItem: React.FC<CommentItemProps> = ({
+  user,
+  text,
+  post,
+}) => {
   return (
     <div className={styles.commentItem}>
       <div className={styles.userInfo}>
         <Avatar style={{ marginRight: 10 }} src={user.avatarUrl}></Avatar>
         <Link
-          legacyBehavior
           href={`
           /profile/${user.id}
         `}>
-          <a>
-            <b>{user.fullname}</b>
-          </a>
+          <b>{user.fullname}</b>
         </Link>
       </div>
       <p className={styles.text}>{text}</p>
-      <Link legacyBehavior href={`/news/myuniquepostid`}>
-        <a>
-          <span className={styles.postTitle}>{post.title}</span>
-        </a>
+      <Link href={`/news/${user.id}`}>
+        <span className={styles.postTitle}>{post.title}</span>
       </Link>
     </div>
   )
