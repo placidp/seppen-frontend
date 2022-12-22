@@ -29,7 +29,7 @@ export const theme = createTheme({
     MuiTextField: {
       styleOverrides: {
         root: {
-          marginBottom: '10px',
+          marginBottom: '20px',
         },
       },
     },

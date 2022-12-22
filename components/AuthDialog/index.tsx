@@ -41,30 +41,18 @@ export const AuthDialog: FC<AuthDialogProps> = ({ onClose, visible }) => {
                   <ArrowBackIcon width={22} height={22} /> К авторизации
                 </p>
               )}
-              {formType === 'login' && (
-                <form>
-                  <TextField
-                    size='small'
-                    label='Эл. почта'
-                    variant='outlined'
-                    fullWidth
-                    required
-                  />
-                  <TextField
-                    size='small'
-                    label='Пароль'
-                    variant='outlined'
-                    fullWidth
-                    required
-                  />
-                  <Button color='primary' variant='contained'>
-                    Войти
-                  </Button>
-                </form>
-              )}
             </Typography>
             {formType === 'main' && (
               <MainForm onOpenLogin={() => setFormType('login')} />
+            )}
+            {formType === 'login' && (
+              <LoginForm onOpenRegister={() => setFormType('register')} />
+            )}
+            {formType === 'register' && (
+              <RegisterForm
+                onOpenRegister={() => setFormType('register')}
+                onOpenLogin={() => setFormType('login')}
+              />
             )}
           </div>
         </DialogContentText>
