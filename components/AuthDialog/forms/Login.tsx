@@ -38,8 +38,6 @@ export const LoginForm: FC<LoginFormProps> = ({ onOpenRegister }) => {
       if (error.response) {
         setErrorMessage(error.response.data.message)
       }
-      // temporary
-      alert('Неверный логин или пароль')
       console.warn('Неверный логин или пароль', error)
     }
   }

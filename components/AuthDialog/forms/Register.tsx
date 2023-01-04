@@ -35,10 +35,12 @@ export const RegisterForm: FC<LoginFormProps> = ({
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       })
+      setErrorMessage('')
     } catch (error) {
-      // temporary
-      alert('Ошибка при регистрации')
       console.warn('Ошибка при регистрации', error)
+      if (error.response) {
+        setErrorMessage(error.response.data.message)
+      }
     }
   }
 
