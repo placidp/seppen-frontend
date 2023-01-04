@@ -7,6 +7,10 @@ import { yupResolver } from '@hookform/resolvers/yup'
 
 import { RegisterFormSchema } from '../../../utils/validations'
 
+import { setCookie } from 'nookies'
+import { UserApi } from '../../../utils/api'
+import { CreateUserDto } from '../../../utils/api/types'
+
 import styles from '../AuthDialog.module.scss'
 interface LoginFormProps {
   onOpenRegister: () => void
@@ -24,7 +28,19 @@ export const RegisterForm: FC<LoginFormProps> = ({
     resolver: yupResolver(RegisterFormSchema),
   })
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async (dto: CreateUserDto) => {
+    try {
+      const data = await UserApi.register(dto)
+      setCookie(null, 'authToken', data.token, {
+        maxAge: 30 * 24 * 60 * 60,
+        path: '/',
+      })
+    } catch (error) {
+      // temporary
+      alert('Ошибка при регистрации')
+      console.warn('Ошибка при регистрации', error)
+    }
+  }
 
   return (
     <FormProvider {...form}>

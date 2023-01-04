@@ -1,4 +1,5 @@
 .paper {
+  width: clamp(520px, 100%, 760px);
   p {
     line-height: 26px;
   }

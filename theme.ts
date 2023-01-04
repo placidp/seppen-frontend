@@ -10,11 +10,11 @@ export const theme = createTheme({
     MuiPaper: {
       styleOverrides: {
         root: {
-          marginBottom: '50px',
+          marginBottom: '10px',
           marginTop: '-10px',
           backgroundColor: '#fafafa',
           // padding: '30px 0 0 0',
-          width: 'clamp(520px, 100%, 760px)',
+          // width: 'clamp(520px, 100%, 760px)',
         },
         rounded: {
           borderRadius: 8,

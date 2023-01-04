@@ -13,8 +13,6 @@ export const SideComments = () => {
     setVisible(!visible)
   }
 
-  console.log(data)
-
   return (
     <div className={clsx(styles.root, !visible && styles.rotated)}>
       <h3 onClick={toggleVisible}>

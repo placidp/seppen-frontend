@@ -6,8 +6,13 @@ import { yupResolver } from '@hookform/resolvers/yup'
 
 import { LoginFormSchema } from '../../../utils/validations'
 
-import styles from '../AuthDialog.module.scss'
 import { FormField } from '../../FormField'
+
+import { UserApi } from '../../../utils/api'
+import { LoginDto } from '../../../utils/api/types'
+import { setCookie } from 'nookies'
+
+import styles from '../AuthDialog.module.scss'
 interface LoginFormProps {
   onOpenRegister: () => void
 }
@@ -21,7 +26,23 @@ export const LoginForm: FC<LoginFormProps> = ({ onOpenRegister }) => {
   })
   console.log(form.formState.errors)
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async (dto: LoginDto) => {
+    try {
+      const data = await UserApi.login(dto)
+      setCookie(null, 'authToken', data.token, {
+        maxAge: 30 * 24 * 60 * 60,
+        path: '/',
+      })
+      setErrorMessage('')
+    } catch (error) {
+      if (error.response) {
+        setErrorMessage(error.response.data.message)
+      }
+      // temporary
+      alert('Неверный логин или пароль')
+      console.warn('Неверный логин или пароль', error)
+    }
+  }
 
   return (
     <div>
@@ -29,11 +50,7 @@ export const LoginForm: FC<LoginFormProps> = ({ onOpenRegister }) => {
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormField name='email' label='Почта' type='email' />
           <FormField name='password' label='Пароль' type='password' />
-          {errorMessage && (
-            <Alert severity='error' className='mb-20'>
-              {errorMessage}
-            </Alert>
-          )}
+          {errorMessage && <Alert severity='error'>{errorMessage}</Alert>}
           <div className={styles.loginButtons}>
             <Button
               disabled={!form.formState.isValid || form.formState.isSubmitting}
