@@ -12,12 +12,16 @@ import { UserApi } from '../../../utils/api'
 import { LoginDto } from '../../../utils/api/types'
 import { setCookie } from 'nookies'
 
+import { useAppDispatch } from '../../../redux/store'
+import { setUserData } from '../../../redux/user/slice'
+
 import styles from '../AuthDialog.module.scss'
 interface LoginFormProps {
   onOpenRegister: () => void
 }
 
 export const LoginForm: FC<LoginFormProps> = ({ onOpenRegister }) => {
+  const dispatch = useAppDispatch()
   const [errorMessage, setErrorMessage] = useState('')
 
   const form = useForm({
@@ -34,6 +38,7 @@ export const LoginForm: FC<LoginFormProps> = ({ onOpenRegister }) => {
         path: '/',
       })
       setErrorMessage('')
+      dispatch(setUserData(data))
     } catch (error) {
       if (error.response) {
         setErrorMessage(error.response.data.message)

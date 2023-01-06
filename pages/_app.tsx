@@ -8,6 +8,9 @@ import { theme } from '../theme'
 import { ThemeProvider } from '@mui/material/styles'
 import '../styles/globals.scss'
 
+import { Provider } from 'react-redux'
+import { store } from '../redux/store'
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -24,8 +27,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Header />
-        <Component {...pageProps} />
+        <Provider store={store}>
+          <Header />
+          <Component {...pageProps} />
+        </Provider>
       </ThemeProvider>
     </>
   )

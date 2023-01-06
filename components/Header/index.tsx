@@ -18,9 +18,14 @@ import {
 import styles from './Header.module.scss'
 import { AuthDialog } from '../AuthDialog'
 
+import { useAppSelector } from '../../redux/store'
+import { selectUserData } from '../../redux/user/selectors'
+
 interface HeaderProps {}
 
 export const Header: FC<HeaderProps> = () => {
+  const userData = useAppSelector(selectUserData)
+
   const [open, setOpen] = useState(false)
 
   const openAuthDialog = () => {
@@ -65,17 +70,20 @@ export const Header: FC<HeaderProps> = () => {
             <Sun width={30} height={30} />
           </IconButton>
         </div>
-        {/* <Link href='/profile/1'>
-          <Avatar
-            className={styles.avatar}
-            alt='Remy Sharp'
-            src='https://lh3.googleusercontent.com/a/ALm5wu3GF2TPl5piy7ckyzDKJ8k6WT9JZ-vaOE90uAK2MA=s83-c-mo'
-          />
-        </Link> */}
-        <div className={styles.loginButton} onClick={openAuthDialog}>
-          <UserIcon />
-          Войти
-        </div>
+        {userData ? (
+          <Link href='/profile/1'>
+            <Avatar
+              className={styles.avatar}
+              alt='Remy Sharp'
+              src='https://lh3.googleusercontent.com/a/ALm5wu3GF2TPl5piy7ckyzDKJ8k6WT9JZ-vaOE90uAK2MA=s83-c-mo'
+            />
+          </Link>
+        ) : (
+          <div className={styles.loginButton} onClick={openAuthDialog}>
+            <UserIcon />
+            Войти
+          </div>
+        )}
         {/* <ArrowDown /> */}
       </div>
       <AuthDialog onClose={closeAuthDialog} visible={open} />

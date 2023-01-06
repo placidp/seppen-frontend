@@ -11,6 +11,9 @@ import { setCookie } from 'nookies'
 import { UserApi } from '../../../utils/api'
 import { CreateUserDto } from '../../../utils/api/types'
 
+import { useAppDispatch } from '../../../redux/store'
+import { setUserData } from '../../../redux/user/slice'
+
 import styles from '../AuthDialog.module.scss'
 interface LoginFormProps {
   onOpenRegister: () => void
@@ -21,6 +24,7 @@ export const RegisterForm: FC<LoginFormProps> = ({
   onOpenRegister,
   onOpenLogin,
 }) => {
+  const dispatch = useAppDispatch()
   const [errorMessage, setErrorMessage] = useState('')
 
   const form = useForm({
@@ -36,6 +40,7 @@ export const RegisterForm: FC<LoginFormProps> = ({
         path: '/',
       })
       setErrorMessage('')
+      dispatch(setUserData(data))
     } catch (error) {
       console.warn('Ошибка при регистрации', error)
       if (error.response) {
