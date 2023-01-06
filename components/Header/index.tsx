@@ -25,7 +25,6 @@ interface HeaderProps {}
 
 export const Header: FC<HeaderProps> = () => {
   const userData = useAppSelector(selectUserData)
-
   const [open, setOpen] = useState(false)
 
   const openAuthDialog = () => {
