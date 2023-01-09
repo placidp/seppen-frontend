@@ -15,18 +15,4 @@ const Home = () => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps =
-  wrapper.getServerSideProps((store) => async (ctx) => {
-    try {
-      const { authToken } = parseCookies(ctx)
-      const userData = await UserApi.getMe(authToken)
-      store.dispatch(setUserData(userData))
-
-      return { props: {} }
-    } catch (error) {
-      console.warn(error)
-      return { props: {} }
-    }
-  })
-
 export default Home

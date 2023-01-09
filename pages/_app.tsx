@@ -11,6 +11,9 @@ import { Provider } from 'react-redux'
 import { store, wrapper } from '../redux/store'
 
 import '../styles/globals.scss'
+import { parseCookies } from 'nookies'
+import { UserApi } from '../utils/api'
+import { setUserData } from '../redux/user/slice'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -34,5 +37,29 @@ function App({ Component, pageProps }: AppProps) {
     </>
   )
 }
+
+App.getInitialProps = wrapper.getInitialAppProps(
+  (store) =>
+    async ({ ctx, Component }) => {
+      try {
+        const { authToken } = parseCookies(ctx)
+
+        const userData = await UserApi.getMe(authToken)
+
+        store.dispatch(setUserData(userData))
+      } catch (error) {
+        console.warn(error)
+      }
+
+      return {
+        pageProps: {
+          ...(Component.getInitialProps
+            ? await Component.getInitialProps({ ...ctx, store })
+            : {}),
+          pathname: ctx.pathname,
+        },
+      }
+    },
+)
 
 export default wrapper.withRedux(App)
