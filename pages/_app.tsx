@@ -7,13 +7,11 @@ import { Header } from '../components/Header'
 import { theme } from '../theme'
 import { ThemeProvider } from '@mui/material/styles'
 
-import { Provider } from 'react-redux'
-import { store, wrapper } from '../redux/store'
+import { wrapper } from '../redux/store'
 
 import '../styles/globals.scss'
-import { parseCookies } from 'nookies'
-import { UserApi } from '../utils/api'
 import { setUserData } from '../redux/user/slice'
+import { Api } from '../utils/api'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -42,12 +40,16 @@ App.getInitialProps = wrapper.getInitialAppProps(
   (store) =>
     async ({ ctx, Component }) => {
       try {
-        const { authToken } = parseCookies(ctx)
-
-        const userData = await UserApi.getMe(authToken)
+        const userData = await Api(ctx).user.getMe()
 
         store.dispatch(setUserData(userData))
       } catch (error) {
+        if (ctx.asPath === '/write') {
+          ctx.res.writeHead(302, {
+            location: '/403',
+          })
+          ctx.res.end()
+        }
         console.warn(error)
       }
 

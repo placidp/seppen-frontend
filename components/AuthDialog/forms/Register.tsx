@@ -8,13 +8,13 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { RegisterFormSchema } from '../../../utils/validations'
 
 import { setCookie } from 'nookies'
-import { UserApi } from '../../../utils/api'
 import { CreateUserDto } from '../../../utils/api/types'
 
 import { useAppDispatch } from '../../../redux/store'
 import { setUserData } from '../../../redux/user/slice'
 
 import styles from '../AuthDialog.module.scss'
+import { Api } from '../../../utils/api'
 interface LoginFormProps {
   onOpenRegister: () => void
   onOpenLogin: () => void
@@ -34,7 +34,7 @@ export const RegisterForm: FC<LoginFormProps> = ({
 
   const onSubmit = async (dto: CreateUserDto) => {
     try {
-      const data = await UserApi.register(dto)
+      const data = await Api().user.register(dto)
       setCookie(null, 'authToken', data.token, {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
