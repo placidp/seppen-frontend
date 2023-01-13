@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import Link from 'next/link'
 
 import { Paper, IconButton, Avatar } from '@mui/material'
@@ -25,15 +25,21 @@ interface HeaderProps {}
 
 export const Header: FC<HeaderProps> = () => {
   const userData = useAppSelector(selectUserData)
-  const [open, setOpen] = useState(false)
+  const [isAuthOpen, setIsAuthOpen] = useState(false)
 
   const openAuthDialog = () => {
-    setOpen(true)
+    setIsAuthOpen(true)
   }
 
   const closeAuthDialog = () => {
-    setOpen(false)
+    setIsAuthOpen(false)
   }
+
+  useEffect(() => {
+    if (isAuthOpen && userData) {
+      setIsAuthOpen(false)
+    }
+  }, [isAuthOpen, userData])
 
   return (
     <Paper classes={{ root: styles.root }} elevation={0}>
@@ -85,7 +91,7 @@ export const Header: FC<HeaderProps> = () => {
         )}
         {/* <ArrowDown /> */}
       </div>
-      <AuthDialog onClose={closeAuthDialog} visible={open} />
+      <AuthDialog onClose={closeAuthDialog} visible={isAuthOpen} />
     </Paper>
   )
 }
