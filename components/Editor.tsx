@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import EditorJS, { OutputData } from '@editorjs/editorjs'
 
 interface EditorProps {
@@ -6,22 +6,29 @@ interface EditorProps {
 }
 
 export const Editor: React.FC<EditorProps> = ({ onChange }) => {
+  const isReady = useRef(false)
+
   useEffect(() => {
-    const editor = new EditorJS({
-      holder: 'editor',
-      placeholder: 'Введите текст вашей статьи',
-      async onChange(api, event) {
-        const { blocks } = await editor.save()
-        onChange(blocks)
-      },
-    })
+    let editor
+    if (!isReady.current) {
+      isReady.current = true
+      editor = new EditorJS({
+        holder: 'editor',
+        placeholder: 'Введите текст вашей статьи',
+        async onChange(api, event) {
+          const { blocks } = await editor.save()
+          onChange(blocks)
+        },
+      })
+    }
 
     return () => {
-      editor.isReady
-        .then(() => {
-          editor.destroy()
-        })
-        .catch((e) => console.error('ERROR editor cleanup', e))
+      !isReady.current &&
+        editor.isReady
+          .then(() => {
+            editor.destroy()
+          })
+          .catch((e) => console.error('ERROR editor cleanup', e))
     }
   }, [])
 
